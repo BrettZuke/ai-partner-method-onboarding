@@ -27,13 +27,16 @@ cd apm-client-onboarding
 # 2. Run setup
 chmod +x setup.sh && ./setup.sh
 
-# 3. Add your API keys
-cp .env.example .env
-# Edit .env — add your TYPEFORM_API_KEY
+# 3. Add your API keys to .env
+# (see docs/getting-started.md for where to get each one)
 
-# 4. Create your intake form
+# 4. Create your intake form (run once)
 python3 execution/create_typeform.py
 # → Prints your live form URL to send to creator clients
+
+# 5. Create a client workspace (run for every new client)
+python3 execution/create_notion_workspace.py "Client Name"
+# → Builds the full Notion workspace and prints the URL
 ```
 
 ---
